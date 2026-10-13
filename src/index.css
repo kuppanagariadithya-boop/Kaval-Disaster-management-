@@ -1,0 +1,218 @@
+/* ==========================================================================
+   KAVAL Design System & Stylesheet
+   Last-Mile Disaster Voice Communication & Verification System
+   ========================================================================== */
+
+:root {
+  --bg-primary: #07090e;
+  --bg-surface: #0f141f;
+  --bg-card: #141b2b;
+  --bg-card-hover: #1a2338;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(245, 158, 11, 0.35);
+  
+  --amber-primary: #f59e0b;
+  --amber-glow: rgba(245, 158, 11, 0.4);
+  --crimson-alert: #ef4444;
+  --crimson-glow: rgba(239, 68, 68, 0.4);
+  --emerald-safe: #10b981;
+  --emerald-glow: rgba(16, 185, 129, 0.4);
+  --cyan-telemetry: #06b6d4;
+  --cyan-glow: rgba(6, 182, 212, 0.3);
+  --purple-accent: #a855f7;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080b12;
+}
+::-webkit-scrollbar-thumb {
+  background: #232d42;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4866;
+}
+
+/* Custom Grid & Utility Classes */
+.font-heading { font-family: var(--font-heading); }
+.font-mono { font-family: var(--font-mono); }
+.font-sans { font-family: var(--font-sans); }
+
+.glass-panel {
+  background: rgba(15, 20, 31, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+}
+
+.glass-card {
+  background: rgba(20, 27, 43, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(245, 158, 11, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glow-amber {
+  box-shadow: 0 0 25px -4px var(--amber-glow);
+}
+.glow-crimson {
+  box-shadow: 0 0 25px -4px var(--crimson-glow);
+}
+.glow-emerald {
+  box-shadow: 0 0 25px -4px var(--emerald-glow);
+}
+.glow-cyan {
+  box-shadow: 0 0 25px -4px var(--cyan-glow);
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes radarSweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rippleRing {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@keyframes audioWave {
+  0%, 100% { height: 6px; }
+  50% { height: 26px; }
+}
+
+@keyframes beaconFlash {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px #ef4444); }
+  50% { opacity: 0.3; filter: none; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-radar {
+  animation: radarSweep 4s linear infinite;
+}
+
+.animate-beacon {
+  animation: beaconFlash 1.4s ease-in-out infinite;
+}
+
+/* Phone Mockup Screen */
+.phone-bezel {
+  width: 320px;
+  height: 610px;
+  background: #090d16;
+  border-radius: 42px;
+  border: 4px solid #334155;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-notch {
+  width: 120px;
+  height: 22px;
+  background: #1e293b;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.phone-speaker {
+  width: 40px;
+  height: 4px;
+  background: #475569;
+  border-radius: 2px;
+}
+.phone-camera {
+  width: 7px;
+  height: 7px;
+  background: #1e293b;
+  border: 1.5px solid #334155;
+  border-radius: 50%;
+}
+
+/* Audio Wave Visualizer Bars */
+.wave-bar {
+  width: 4px;
+  background: #f59e0b;
+  border-radius: 2px;
+  animation: audioWave 1.2s ease-in-out infinite;
+}
+.wave-bar:nth-child(1) { animation-delay: 0.1s; }
+.wave-bar:nth-child(2) { animation-delay: 0.3s; }
+.wave-bar:nth-child(3) { animation-delay: 0.5s; }
+.wave-bar:nth-child(4) { animation-delay: 0.2s; }
+.wave-bar:nth-child(5) { animation-delay: 0.4s; }
+.wave-bar:nth-child(6) { animation-delay: 0.6s; }
+
+/* Print styles for Academic Project Review Dossier */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
