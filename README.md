@@ -5,7 +5,7 @@
 
 ---
 
-## 📌 Executive Overview & Abstract
+## 📌 Executive Overview & Problem Statement
 
 In catastrophic natural disasters (flash floods, cyclones, landslides), conventional warning systems break down at the **"last-mile"**:
 1. **The Illiteracy Trap:** Over 25% of rural populations cannot comprehend textual SMS bulletins.
@@ -22,6 +22,16 @@ These in-band audio tones are demodulated via the server-side **Goertzel Algorit
 
 ---
 
+## 🌐 Live Website & How to Run
+
+This repository contains the **complete, standalone HTML5/CSS3/JavaScript project** in [`index.html`](index.html).
+
+### 🚀 Running the Project:
+1. **Direct Browser Launch:** Download or clone this repository and double-click `index.html` to open it in Chrome, Edge, or Firefox. **Zero server setup or dependencies required**.
+2. **GitHub Pages (Free Hosting):** Enable GitHub Pages in your repository Settings &rarr; Pages (Source: `main` branch, `/ (root)` folder) to get a live public `.github.io` URL.
+
+---
+
 ## 🏗️ 4-Tier System Architecture
 
 ```
@@ -33,15 +43,18 @@ These in-band audio tones are demodulated via the server-side **Goertzel Algorit
 
 ---
 
-## 🚀 Live Demo & Website Formats
+## 🌟 Key Features in the HTML Application
 
-- **Single-File Standalone Review (Open directly in any browser):** `kaval-review.html`
-- **React 19 + Vite + Three.js Application:** `npm run dev` (Port 5175)
-- **Production Bundle:** Pre-built in `/dist`
+1. **Incident Commander Desk:** Select disaster scenarios (*Flash Flood, Cyclone, Landslide*), choose regional languages (*English, Hindi, Telugu, Tamil*), and trigger batch voice calls.
+2. **Interactive Citizen Smartphone Mockup:** Incoming emergency call with audio voice playback and interactive DTMF keypad (`1`, `2`, `3`, `4`) with authentic Dual-Tone Multi-Frequency audio synthesis.
+3. **Real-Time Audio FFT Spectrum Oscilloscope:** Live Canvas visualizer plotting 500Hz to 1600Hz and illuminating the twin Goertzel frequency spikes in real-time.
+4. **3D / 2D Geospatial Rescue Map:** Canvas-based 3D digital elevation terrain with animated flood water swell, GSM tower radio propagation rings, and 360° mouse orbit controls.
+5. **Automated Rescue Priority Queue:** Ranks trapped casualties by medical need and elevation risk for rescue boat teams.
+6. **Academic Review Dossier & Rubric:** University Viva Voce evaluation rubric (100 Marks) with one-click **Print / PDF export**.
 
 ---
 
-## 📊 Key Results & Empirical Benchmarks
+## 📊 Experimental Results & Benchmarks
 
 - **Acknowledgement Turnaround Latency:** **8.4 seconds** median (vs 2.4 - 5.8 hours for text SMS)
 - **Citizen Response Rate:** **88.6%** (vs 16.4% SMS read receipts)
